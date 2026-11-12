@@ -16,7 +16,7 @@ function markerIcon(stop: CandyStop, selected: boolean): L.DivIcon {
     .filter(Boolean)
     .join(' ');
   return L.divIcon({
-    html: `<div class="${cls}"><span>??</span></div>`,
+    html: `<div class="${cls}"><span>🍬</span></div>`,
     className: '',
     iconSize: [34, 34],
     iconAnchor: [17, 32],
@@ -73,7 +73,7 @@ export function MapView({ stops, selectedId, onSelect, onAddRequest }: MapViewPr
     for (const stop of stops) {
       const marker = L.marker([stop.lat, stop.lng], { icon: markerIcon(stop, stop.id === selectedId) });
       marker.bindPopup(
-        `<strong>${escapeHtml(stop.name)}</strong><br/>${'??'.repeat(stop.spooky)} �� ${stop.allergenFree ? '??' : ''} ${escapeHtml(stop.hours || 'All night')}<br/><small>${stop.votes} ??</small>`,
+        `<strong>${escapeHtml(stop.name)}</strong><br/>${'🎃'.repeat(stop.spooky)} · ${stop.allergenFree ? '🌾' : ''} ${escapeHtml(stop.hours || 'All night')}<br/><small>${stop.votes} 🍬</small>`,
       );
       marker.on('click', () => onSelect(stop.id));
       marker.addTo(layer);
@@ -107,7 +107,7 @@ export function MapView({ stops, selectedId, onSelect, onAddRequest }: MapViewPr
 
   return (
     <div className="tot-map ps-map-dark" ref={hostRef}>
-      {picking && <div className="tot-pick-banner">?? {t('form.pickHint')}</div>}
+      {picking && <div className="tot-pick-banner">🎃 {t('form.pickHint')}</div>}
       <Button
         className="tot-locate"
         style={{ top: '52px' }}
@@ -125,4 +125,3 @@ export function MapView({ stops, selectedId, onSelect, onAddRequest }: MapViewPr
 function escapeHtml(s: string): string {
   return s.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
 }
-
