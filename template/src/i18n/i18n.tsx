@@ -2,7 +2,7 @@ import { createContext, useCallback, useContext, useEffect, useMemo, useState } 
 import type { ReactNode } from 'react';
 
 /**
- * PumpkinSeed i18n �� 60 lines instead of a dependency.
+ * PumpkinSeed i18n — 60 lines instead of a dependency.
  * Dictionaries are plain objects; the provider auto-detects the browser
  * language and remembers the user's choice.
  */
@@ -67,4 +67,3 @@ export function useI18n(): I18nContextValue {
   if (!ctx) throw new Error('useI18n must be used inside <I18nProvider>');
   return ctx;
 }
-
