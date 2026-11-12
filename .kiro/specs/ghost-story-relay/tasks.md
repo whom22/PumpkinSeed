@@ -1,4 +1,4 @@
-# Ghost Story Relay �� Tasks
+# Ghost Story Relay — Tasks
 
 - [x] 1. Define `StoryLine` row, room-code generator (unambiguous alphabet), ghost-name generator
 - [x] 2. En/zh dictionaries (home/room/share/toast namespaces)
@@ -12,4 +12,3 @@
 - [x] 10. Room chrome: code badge, spirits count, inline nickname, invite copy
 - [x] 11. PWA manifest + ghost icon; responsive CSS (desktop centered / mobile stack)
 - [x] 12. `tsc --noEmit` green; vite build green
-
