@@ -1,5 +1,5 @@
 /* ============================================================
-   PumpkinSeed base styles �� the shared design language.
+   PumpkinSeed base styles — the shared design language.
    Apps import this once; festival skins recolor everything
    through CSS custom properties at runtime.
    ============================================================ */
@@ -328,7 +328,7 @@ a { color: var(--ps-secondary-strong); }
 }
 .leaflet-control-attribution a { color: var(--ps-text-dim) !important; }
 
-/* Dark tiles filter for map (OSM standard tiles �� spooky night mode) */
+/* Dark tiles filter for map (OSM standard tiles → spooky night mode) */
 .ps-map-dark .leaflet-tile-pane {
   filter: invert(1) hue-rotate(190deg) brightness(1.02) contrast(0.86) saturate(0.55);
 }
@@ -339,4 +339,3 @@ a { color: var(--ps-secondary-strong); }
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
 .ps-demo-notice { margin: 0 0 1rem; padding: .65rem .9rem; border: 1px solid var(--ps-border); border-radius: .7rem; font-size: .82rem; line-height: 1.5; color: var(--ps-text-dim); }
-
