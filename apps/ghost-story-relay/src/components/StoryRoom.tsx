@@ -132,7 +132,7 @@ export function StoryRoom({ data, roomId, nickname, onRename }: StoryRoomProps) 
 
   const storyText = lines.map((l) => l.text).join(' ');
 
-  if (!ready) return <Spinner label="Raising the spirits��" />;
+  if (!ready) return <Spinner label="Raising the spirits…" />;
 
   return (
     <div className="gsr-room">
@@ -143,9 +143,9 @@ export function StoryRoom({ data, roomId, nickname, onRename }: StoryRoomProps) 
         <Button variant="ghost" size="sm" onClick={() => (window.location.hash = '')}>
           {t('room.back')}
         </Button>
-        <Badge tone="accent">?? {roomId}</Badge>
+        <Badge tone="accent">🔑 {roomId}</Badge>
         <Badge tone="muted">
-          ?? {spirits} {t('room.guests')}
+          👻 {spirits} {t('room.guests')}
         </Badge>
         <div style={{ flex: 1 }} />
         <input
@@ -156,7 +156,7 @@ export function StoryRoom({ data, roomId, nickname, onRename }: StoryRoomProps) 
           aria-label={t('home.nickname')}
         />
         <Button variant="secondary" size="sm" onClick={copyInvite}>
-          ?? {t('room.copy')}
+          🔗 {t('room.copy')}
         </Button>
         {reading ? (
           <Button variant="ghost" size="sm" onClick={stopReading}>
@@ -174,7 +174,7 @@ export function StoryRoom({ data, roomId, nickname, onRename }: StoryRoomProps) 
 
       <div className="gsr-story" ref={listRef}>
         {lines.length === 0 ? (
-          <EmptyState motif="???" text={t('empty.room')} />
+          <EmptyState motif="🕯️" text={t('empty.room')} />
         ) : (
           lines.map((line) => (
             <StoryLineView
@@ -210,7 +210,7 @@ export function StoryRoom({ data, roomId, nickname, onRename }: StoryRoomProps) 
         </div>
       </div>
 
-      <Modal open={finishing} onClose={() => setFinishing(false)} title={`?? ${t('share.title')}`}>
+      <Modal open={finishing} onClose={() => setFinishing(false)} title={`📜 ${t('share.title')}`}>
         <p className="gsr-final">{storyText}</p>
         <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'flex-end', marginTop: '1rem', flexWrap: 'wrap' }}>
           <Button
@@ -252,15 +252,14 @@ function StoryLineView({
     <div className={`gsr-line ${isHouse ? 'gsr-line--house' : ''} ${isYou ? 'gsr-line--you' : ''}`}>
       <div className="gsr-line__head">
         <span className="gsr-line__author">
-          {isHouse ? line.author : `?? ${line.author}`}
-          {isYou && !isHouse && <em className="gsr-you"> �� {t('room.you')}</em>}
+          {isHouse ? line.author : `🪦 ${line.author}`}
+          {isYou && !isHouse && <em className="gsr-you"> · {t('room.you')}</em>}
         </span>
         <button className={`gsr-vibe ${voted ? 'gsr-vibe--on' : ''}`} onClick={onVibe} disabled={pending} title="spooky vibes">
-          ?? {line.vibes}
+          👻 {line.vibes}
         </button>
       </div>
       <p className="gsr-line__text">{line.text}</p>
     </div>
   );
 }
-
