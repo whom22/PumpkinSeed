@@ -4,7 +4,7 @@ import { useFestival } from '../theme/FestivalProvider';
 import { activateModalFocus } from './modalFocus';
 
 /* ============================================================
-   PumpkinSeed UI kit �� hand-rolled, dependency-free.
+   PumpkinSeed UI kit — hand-rolled, dependency-free.
    Small enough to read in five minutes, polished enough to ship.
    ============================================================ */
 
@@ -36,7 +36,7 @@ export function Badge({ tone = 'default', title, children }: { tone?: BadgeTone;
   );
 }
 
-export function EmptyState({ motif = '??', text }: { motif?: string; text: string }) {
+export function EmptyState({ motif = '👻', text }: { motif?: string; text: string }) {
   return (
     <div className="ps-empty">
       <span className="ps-empty__motif">{motif}</span>
@@ -48,7 +48,7 @@ export function EmptyState({ motif = '??', text }: { motif?: string; text: strin
 export function Spinner({ label }: { label?: string }) {
   return (
     <div style={{ textAlign: 'center', padding: '2.5rem 0', color: 'var(--ps-text-dim)' }}>
-      <div style={{ fontSize: '2rem', animation: 'ps-spin 1.4s ease-in-out infinite', display: 'inline-block' }}>??</div>
+      <div style={{ fontSize: '2rem', animation: 'ps-spin 1.4s ease-in-out infinite', display: 'inline-block' }}>🎃</div>
       {label && <p style={{ margin: '0.4rem 0 0' }}>{label}</p>}
       <style>{'@keyframes ps-spin{50%{transform:rotate(180deg) scale(0.85)}100%{transform:rotate(360deg)}}'}</style>
     </div>
@@ -155,4 +155,3 @@ export function FestivalConfetti({ count = 14 }: { count?: number }) {
     </div>
   );
 }
-
