@@ -4,7 +4,7 @@ import type { DataLayer } from '../data/types';
 import { Badge, FestivalConfetti } from './kit';
 
 /**
- * AppChrome �� the template's visible signature.
+ * AppChrome — the template's visible signature.
  * Header with motif + title, festival skin switcher, data-mode badge,
  * and a footer that always credits the seed. Both apps wear this, which
  * is what makes the Skeleton Crew lineage legible at a glance.
@@ -34,7 +34,7 @@ export function AppChrome({ data, title, subtitle, actions, children, footerNote
         </div>
         <div className="ps-header__spacer" />
         <Badge tone={data.mode === 'supabase' ? 'accent' : 'muted'} title={data.mode === 'supabase' ? 'Hosted realtime' : 'Browser-local realtime'}>
-          {data.mode === 'supabase' ? '? live' : '?? local'}
+          {data.mode === 'supabase' ? '☁ live' : '🧪 local'}
         </Badge>
         <select
           className="ps-select"
@@ -64,11 +64,10 @@ export function AppChrome({ data, title, subtitle, actions, children, footerNote
       <footer className="ps-footer">
         {footerNote ?? (
           <>
-            ?? Grown from <strong>PumpkinSeed</strong> �� one lean template, many pumpkins �� Local demo
+            🎃 Grown from <strong>PumpkinSeed</strong> — one lean template, many pumpkins · Local demo
           </>
         )}
       </footer>
     </div>
   );
 }
-
