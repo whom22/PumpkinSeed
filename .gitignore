@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-ssr/
+*.local
+.env
+.env.*
+!.env.example
+.DS_Store
+coverage/
+
+# NOTE: /.kiro is intentionally NOT gitignored.
+# Kiroween rules: the .kiro directory must be present in the repo
+# or the submission can be disqualified.
+
+# local QA screenshots
+.qa/
+
