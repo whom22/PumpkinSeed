@@ -2,9 +2,9 @@
  * PumpkinSeed data layer contracts.
  *
  * One tiny interface powers both apps. Two swappable backends:
- *  - local:  localStorage + BroadcastChannel �� zero-setup, two browser tabs
+ *  - local:  localStorage + BroadcastChannel → zero-setup, two browser tabs
  *            demo live realtime with no account at all.
- *  - supabase: hosted Postgres + realtime �� the community-grade backend.
+ *  - supabase: hosted Postgres + realtime → the community-grade backend.
  *
  * Apps never know (or care) which one is active.
  */
@@ -17,7 +17,7 @@ export interface Row {
 export type RowDraft<T extends Row> = Omit<T, 'id' | 'created_at'>;
 
 export interface DataLayer {
-  /** Which adapter is live �� surfaced in the UI as a subtle badge. */
+  /** Which adapter is live — surfaced in the UI as a subtle badge. */
   readonly mode: 'local' | 'supabase';
   list<T extends Row>(table: string): Promise<T[]>;
   insert<T extends Row>(table: string, row: RowDraft<T>): Promise<T>;
@@ -43,4 +43,3 @@ export function uid(): string {
 export function nowIso(): string {
   return new Date().toISOString();
 }
-
