@@ -19,7 +19,7 @@ export function HomeView({ nickname, onRename, onCreate, onJoin }: HomeViewProps
   return (
     <div className="gsr-home">
       <div className="gsr-hero">
-        <h1 className="gsr-hero__title">?? {t('app.title')}</h1>
+        <h1 className="gsr-hero__title">👻 {t('app.title')}</h1>
         <p className="gsr-hero__tagline">{t('home.tagline')}</p>
       </div>
 
@@ -34,8 +34,8 @@ export function HomeView({ nickname, onRename, onCreate, onJoin }: HomeViewProps
               onChange={(e) => onRename(e.target.value)}
               onBlur={(e) => !e.target.value.trim() && onRename(randomGhostName())}
             />
-            <Button variant="ghost" size="sm" onClick={() => onRename(randomGhostName())} title="??">
-              ??
+            <Button variant="ghost" size="sm" onClick={() => onRename(randomGhostName())} title="🎲">
+              🎲
             </Button>
           </div>
 
@@ -78,4 +78,3 @@ export function HomeView({ nickname, onRename, onCreate, onJoin }: HomeViewProps
     </div>
   );
 }
-
