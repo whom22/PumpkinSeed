@@ -76,7 +76,7 @@ export function AddStopModal({ open, data, onClose, onAdded }: AddStopModalProps
               {t('form.picked')} {pick.lat.toFixed(5)}, {pick.lng.toFixed(5)}
             </span>
           ) : (
-            <span>??? {t('form.pickHint')}</span>
+            <span>🗺️ {t('form.pickHint')}</span>
           )}
           <Button size="sm" variant="ghost" disabled={saving} onClick={() => {
             onClose();
@@ -118,7 +118,7 @@ export function AddStopModal({ open, data, onClose, onAdded }: AddStopModalProps
             <div className="tot-stars">
               {[1, 2, 3, 4, 5].map((n) => (
                 <button key={n} type="button" className={n <= spooky ? 'on' : ''} onClick={() => setSpooky(n)}>
-                  ??
+                  🎃
                 </button>
               ))}
             </div>
@@ -127,7 +127,7 @@ export function AddStopModal({ open, data, onClose, onAdded }: AddStopModalProps
 
         <label className="tot-check">
           <input type="checkbox" checked={allergenFree} onChange={(e) => setAllergenFree(e.target.checked)} />
-          ?? {t('form.allergenFree')}
+          🌾 {t('form.allergenFree')}
         </label>
 
         <div>
@@ -140,11 +140,10 @@ export function AddStopModal({ open, data, onClose, onAdded }: AddStopModalProps
             {t('btn.cancel')}
           </Button>
           <Button onClick={save} disabled={!pick || saving}>
-            ?? {t('btn.save')}
+            🎃 {t('btn.save')}
           </Button>
         </div>
       </fieldset>
     </Modal>
   );
 }
-
