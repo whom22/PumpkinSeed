@@ -1,4 +1,4 @@
-# Festival Kit Template �� Tasks
+# Festival Kit Template — Tasks
 
 - [x] 1. Set up pnpm workspace (root, template, two apps) with strict TS base config
 - [x] 2. Define `DataLayer` contract, `Row`, `RowDraft`, `uid`, `nowIso` in `data/types.ts`
@@ -15,4 +15,3 @@
 - [x] 13. Build hooks: `useTable`, `usePersistedState`, `useGeolocation`, `useClock`
 - [x] 14. Barrel `src/index.ts` + `styles.css` export + `env.d.ts`
 - [x] 15. `tsc --noEmit` green for template package
-
