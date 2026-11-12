@@ -1,5 +1,5 @@
 /**
- * PumpkinSeed �� festival skin definitions.
+ * PumpkinSeed — festival skin definitions.
  *
  * A "skin" is a complete festival look expressed as CSS custom properties.
  * Apps inherit the whole design language from one object; adding a festival
@@ -23,8 +23,8 @@ export interface FestivalSkin {
 export const halloween: FestivalSkin = {
   id: 'halloween',
   name: 'Halloween',
-  motif: '??',
-  particles: ['??', '??', '??', '???', '??'],
+  motif: '🎃',
+  particles: ['🎃', '👻', '🦇', '🕷️', '🍬'],
   vars: {
     '--ps-bg': '#0d0817',
     '--ps-bg-elevated': '#171026',
@@ -51,8 +51,8 @@ export const halloween: FestivalSkin = {
 export const christmas: FestivalSkin = {
   id: 'christmas',
   name: 'Christmas',
-  motif: '??',
-  particles: ['??', '??', '??', '?', '??'],
+  motif: '🎄',
+  particles: ['🎄', '❄️', '🎁', '⭐', '🔔'],
   vars: {
     '--ps-bg': '#071018',
     '--ps-bg-elevated': '#0c1a26',
@@ -79,8 +79,8 @@ export const christmas: FestivalSkin = {
 export const lunarNewYear: FestivalSkin = {
   id: 'lunar-new-year',
   name: 'Lunar New Year',
-  motif: '??',
-  particles: ['??', '??', '??', '??', '?'],
+  motif: '🧧',
+  particles: ['🧧', '🏮', '🎆', '🐲', '✨'],
   vars: {
     '--ps-bg': '#160708',
     '--ps-bg-elevated': '#241012',
@@ -115,4 +115,3 @@ export function applySkin(skin: FestivalSkin): void {
   root.dataset.skin = skin.id;
   root.dataset.motif = skin.motif;
 }
-
