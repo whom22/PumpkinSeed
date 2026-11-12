@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from 'react';
 import type { DataLayer, Row } from '../data/types';
 
 /**
- * useTable �� reactive table subscription. The only data hook apps need:
+ * useTable — reactive table subscription. The only data hook apps need:
  * rows stay in sync across tabs (local mode) or devices (supabase mode).
  */
 export function useTable<T extends Row>(data: DataLayer, table: string) {
@@ -45,7 +45,7 @@ export function useTable<T extends Row>(data: DataLayer, table: string) {
   return { rows, ready, error, refresh };
 }
 
-/** usePersistedState �� useState that remembers itself. */
+/** usePersistedState — useState that remembers itself. */
 export function usePersistedState<T>(key: string, initial: T) {
   const [value, setValue] = useState<T>(() => {
     try {
@@ -61,7 +61,7 @@ export function usePersistedState<T>(key: string, initial: T) {
   return [value, setValue] as const;
 }
 
-/** useGeolocation �� one-shot locate with error surfacing. */
+/** useGeolocation — one-shot locate with error surfacing. */
 export function useGeolocation() {
   const [state, setState] = useState<{ pos?: GeolocationPosition; error?: string; loading: boolean }>({
     loading: false,
@@ -83,7 +83,7 @@ export function useGeolocation() {
   return { ...state, locate };
 }
 
-/** useClock �� ticking timestamp for countdowns. */
+/** useClock — ticking timestamp for countdowns. */
 export function useClock(intervalMs = 1000): Date {
   const [now, setNow] = useState(() => new Date());
   useEffect(() => {
@@ -92,4 +92,3 @@ export function useClock(intervalMs = 1000): Date {
   }, [intervalMs]);
   return now;
 }
-
