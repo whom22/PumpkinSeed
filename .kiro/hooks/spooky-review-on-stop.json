@@ -1,0 +1,15 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "spooky-review-on-stop",
+      "trigger": "Stop",
+      "action": {
+        "type": "agent",
+        "prompt": "The agent session is stopping. Before wrapping up: 1) confirm both apps still typecheck (pnpm -r typecheck or per-package tsc --noEmit), 2) confirm any user-facing strings added this session exist in BOTH the en and zh dictionaries, 3) confirm no new runtime dependency was added without a steering-level justification. Report anything that failed in one short list."
+      },
+      "enabled": true
+    }
+  ]
+}
+
