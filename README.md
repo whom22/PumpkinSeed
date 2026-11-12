@@ -61,7 +61,7 @@ Its camelCase/snake_case field mapping matches the sample SQL and is unit-tested
 
 The repository contains three original application/template specification sets and a new modal-focus requirements record, steering files and hook definitions under `.kiro/`. Their presence does not prove actual Kiro sessions, executed hooks, or a spec-before-code workflow. Those claims remain unverified.
 
-Use [the factual submission draft](docs/submission-draft.md), not the archived promotional drafts, as the starting point. No public repository, hosted deployment, video or final submission is established by this local checkout. Competition eligibility and current rules need separate verification.
+Use [the factual submission draft](docs/submission-draft.md), not the archived promotional drafts, as the starting point. The source repository is public at https://github.com/whom22/PumpkinSeed; no hosted deployment, public video or final submission is established by this local checkout. Competition eligibility and current rules need separate verification.
 
 ## License
 
