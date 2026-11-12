@@ -1,4 +1,4 @@
-# Festival Kit Template �� Requirements
+# Festival Kit Template — Requirements
 
 ## Overview
 The seed package `@pumpkin-seed/core` provides everything a festival app needs so that two
@@ -39,7 +39,7 @@ optionally upgrades to hosted realtime, so my demo always works and my productio
 **User story:** As a builder, I want polished themed primitives, so both apps look designed, not default.
 
 #### Acceptance criteria
-1. THE SYSTEM SHALL export Button (4 variants �� 3 sizes), Card, Badge (3 tones), Modal, Toasts,
+1. THE SYSTEM SHALL export Button (4 variants × 3 sizes), Card, Badge (3 tones), Modal, Toasts,
    EmptyState, Spinner, FestivalConfetti, AppChrome, and LangToggle from the barrel.
 2. WHEN a mutation succeeds or fails
    THE SYSTEM SHALL show a toast that auto-dismisses within 4 seconds.
@@ -57,4 +57,3 @@ weighty i18n library.
    THE SYSTEM SHALL fall back to English, then to the key itself.
 3. WHEN the user toggles language
    THE SYSTEM SHALL persist the choice across reloads and update `<html lang>`.
-
