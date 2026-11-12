@@ -5,7 +5,7 @@ inclusion: always
 # Product: PumpkinSeed
 
 PumpkinSeed is a **lean festival-app template** ("the seed") plus **two distinct apps** grown from it,
-built for the Kiroween 2026 hackathon's **Skeleton Crew** category (one template �� two apps).
+built for the Kiroween 2026 hackathon's **Skeleton Crew** category (one template → two apps).
 
 ## Why this exists
 
@@ -34,4 +34,3 @@ the same template powers both, so a new festival tool takes hours, not weeks.
 2. One environment variable pair (`VITE_SUPABASE_URL` / `VITE_SUPABASE_ANON_KEY`) upgrades both apps to hosted realtime.
 3. Adding a new festival = one skin object, not a fork.
 4. Every artifact a Kiro workflow needs (specs, steering, hooks) ships in the repo and stays un-gitignored.
-
