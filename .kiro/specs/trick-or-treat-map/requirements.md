@@ -1,4 +1,4 @@
-# Trick-or-Treat Map �� Requirements
+# Trick-or-Treat Map — Requirements
 
 ## Overview
 A community candy map for Halloween night: generous houses pin their location, candy types,
@@ -11,7 +11,7 @@ allergy info, and candy hours; trick-or-treaters filter, locate, and thank them.
 details, so families can find me.
 
 #### Acceptance criteria
-1. WHEN the user taps the map's ??+ button
+1. WHEN the user taps the map's 🎃+ button
    THE SYSTEM SHALL enter pick mode, show a hint banner, and open the add form at the next
    tapped coordinate.
 2. WHEN the add form opens
@@ -43,7 +43,6 @@ details, so families can find me.
 #### Acceptance criteria
 1. WHEN the user presses "Thanks!"
    THE SYSTEM SHALL increment the row's `votes` by one, live-synced, and show a toast.
-2. THE SYSTEM SHALL display a votes-sorted leaderboard with ?????? medals and candy-type emojis.
+2. THE SYSTEM SHALL display a votes-sorted leaderboard with 🥇🥈🥉 medals and candy-type emojis.
 3. WHEN a house is allergen-free
-   THE SYSTEM SHALL badge it ?? and color its map marker green.
-
+   THE SYSTEM SHALL badge it 🌾 and color its map marker green.
