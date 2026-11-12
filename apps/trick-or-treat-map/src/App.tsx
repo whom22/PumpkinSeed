@@ -95,10 +95,10 @@ function MapShell({ data }: { data: DataLayer }) {
               onChange={(e) => setSearch(e.target.value)}
             />
             <Button variant={openOnly ? 'primary' : 'ghost'} size="sm" onClick={() => setOpenOnly((v) => !v)}>
-              ??? {t('filter.openNow')}
+              🕯️ {t('filter.openNow')}
             </Button>
             <Button variant={allergyOnly ? 'primary' : 'ghost'} size="sm" onClick={() => setAllergyOnly((v) => !v)}>
-              ?? {t('filter.allergenFree')}
+              🌾 {t('filter.allergenFree')}
             </Button>
             <Button size="sm" onClick={() => setAdding(true)}>
               {t('btn.addHouse')}
@@ -110,7 +110,7 @@ function MapShell({ data }: { data: DataLayer }) {
               className={`tot-chip ${candyFilter === null ? 'tot-chip--on' : ''}`}
               onClick={() => setCandyFilter(null)}
             >
-              ?? All
+              🍭 All
             </button>
             {CANDY_TYPES.map((c) => (
               <button
@@ -131,10 +131,10 @@ function MapShell({ data }: { data: DataLayer }) {
               onAddRequest={() => setAdding(true)}
             />
           ) : (
-            <Spinner label="Lighting the lanterns��" />
+            <Spinner label="Lighting the lanterns…" />
           )}
 
-          {data.mode === 'local' && <p className="tot-hint">?? {t('hint.local')}</p>}
+          {data.mode === 'local' && <p className="tot-hint">🧪 {t('hint.local')}</p>}
         </section>
 
         {/* ---------- Sidebar ---------- */}
@@ -143,18 +143,18 @@ function MapShell({ data }: { data: DataLayer }) {
             <StopDetail stop={selected} pending={pendingVotes.has(selected.id)} onThanks={() => thank(selected)} onClose={() => setSelectedId(null)} />
           )}
 
-          <h2 className="tot-side-title">?? {t('list.title')}</h2>
+          <h2 className="tot-side-title">🏆 {t('list.title')}</h2>
           {leaderboard.length === 0 ? (
-            <EmptyState motif="???" text={t('empty.map')} />
+            <EmptyState motif="🏚️" text={t('empty.map')} />
           ) : (
             <ol className="tot-board">
               {leaderboard.map((s, i) => (
                 <li key={s.id} className={`tot-row ${s.id === selectedId ? 'tot-row--sel' : ''}`}>
                   <button className="tot-row__main" onClick={() => setSelectedId(s.id)}>
-                    <span className="tot-row__rank">{['??', '??', '??'][i] ?? `#${i + 1}`}</span>
+                    <span className="tot-row__rank">{['🥇', '🥈', '🥉'][i] ?? `#${i + 1}`}</span>
                     <span className="tot-row__name">
                       {s.name}
-                      {s.allergenFree && <Badge tone="accent">??</Badge>}
+                      {s.allergenFree && <Badge tone="accent">🌾</Badge>}
                       <span className="tot-row__candy">{s.candy.map(candyEmoji).join(' ')}</span>
                     </span>
                   </button>
@@ -179,9 +179,9 @@ function StopDetail({ stop, pending, onThanks, onClose }: { stop: CandyStop; pen
   return (
     <Modal open onClose={onClose} title={stop.name}>
       <p className="tot-detail-badges">
-        {stop.allergenFree && <Badge tone="accent">?? allergy-friendly</Badge>}
-        <Badge>{'??'.repeat(stop.spooky)}</Badge>
-        {stop.hours && <Badge tone="muted">??? {stop.hours}</Badge>}
+        {stop.allergenFree && <Badge tone="accent">🌾 allergy-friendly</Badge>}
+        <Badge>{'🎃'.repeat(stop.spooky)}</Badge>
+        {stop.hours && <Badge tone="muted">🕯️ {stop.hours}</Badge>}
       </p>
       {stop.candy.length > 0 && (
         <p className="tot-detail-candy">
@@ -192,7 +192,7 @@ function StopDetail({ stop, pending, onThanks, onClose }: { stop: CandyStop; pen
           ))}
         </p>
       )}
-      {stop.note && <p className="tot-detail-note">��{stop.note}��</p>}
+      {stop.note && <p className="tot-detail-note">“{stop.note}”</p>}
       <div style={{ display: 'flex', gap: '0.6rem', justifyContent: 'flex-end', marginTop: '1rem' }}>
         <Button variant="ghost" onClick={onClose}>
           {t('btn.close')}
@@ -204,4 +204,3 @@ function StopDetail({ stop, pending, onThanks, onClose }: { stop: CandyStop; pen
     </Modal>
   );
 }
-
