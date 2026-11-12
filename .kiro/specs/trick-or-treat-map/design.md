@@ -1,15 +1,15 @@
-# Trick-or-Treat Map �� Design
+# Trick-or-Treat Map — Design
 
 ## Composition
 
 ```
 AppChrome
-������ .tot-layout (desktop: map | sidebar 380px; mobile: stacked)
-    ������ .tot-mappane
-    ��   ������ toolbar: search �� open-now �� allergy-only �� add-house
-    ��   ������ candy chips (single-select type filter)
-    ��   ������ MapView (Leaflet, dark-filtered OSM, divIcon pins)
-    ������ .tot-side: StopDetail (modal) + votes leaderboard
+└── .tot-layout (desktop: map | sidebar 380px; mobile: stacked)
+    ├── .tot-mappane
+    │   ├── toolbar: search · open-now · allergy-only · add-house
+    │   ├── candy chips (single-select type filter)
+    │   └── MapView (Leaflet, dark-filtered OSM, divIcon pins)
+    └── .tot-side: StopDetail (modal) + votes leaderboard
 ```
 
 ## Key decisions
@@ -19,17 +19,17 @@ AppChrome
   (`fittedRef` guard). Everything else stays React.
 - **Pins as `L.divIcon`.** A rotated teardrop div styled with `--ps-accent`/`--ps-success`
   gradients keeps the pins on-theme for free and lets CSS do the selected ring.
-- **Pick flow over a geocoder.** The ??+ button arms pick mode; the next map click dispatches
+- **Pick flow over a geocoder.** The 🎃+ button arms pick mode; the next map click dispatches
   `tot:pick` with latlng; `AddStopModal` listens and prefills. Geolocation is only a prefill.
-- **Filtering is a pure `useMemo`** over `useTable` rows �� no server round-trips, works the
+- **Filtering is a pure `useMemo`** over `useTable` rows — no server round-trips, works the
   same on both adapters.
-- **Night mode is a tile-pane CSS filter** (`invert �� hue-rotate`) on standard OSM tiles:
+- **Night mode is a tile-pane CSS filter** (`invert → hue-rotate`) on standard OSM tiles:
   no tile API key, attribution preserved.
 
 ## Data
 
 `candy_stops`: `name, lat, lng, candy: string[], allergenFree: boolean, hours: string,
-spooky: 1-5, note?, votes: number` �� flat, anon-writable, realtime-synced.
+spooky: 1-5, note?, votes: number` — flat, anon-writable, realtime-synced.
 
 ## Error handling
 
@@ -40,6 +40,5 @@ spooky: 1-5, note?, votes: number` �� flat, anon-writable, realtime-synced.
 ## Testing strategy
 
 - Two-tab manual matrix for live adds/thanks (local mode), then repeat with Supabase env set.
-- Filters: hours boundary cases (empty window, midnight-crossing not supported by design ��
+- Filters: hours boundary cases (empty window, midnight-crossing not supported by design —
   documented in `parseHours`).
-
