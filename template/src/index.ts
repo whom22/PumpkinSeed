@@ -1,5 +1,5 @@
 /**
- * @pumpkin-seed/core �� the seed.
+ * @pumpkin-seed/core — the seed.
  * Everything an app needs to germinate: festival skins, UI kit,
  * realtime data layer, i18n, shared chrome, and hooks.
  */
@@ -29,4 +29,3 @@ export type { Lang, Dict } from './i18n/i18n';
 
 // Hooks
 export { useTable, usePersistedState, useGeolocation, useClock } from './hooks/index';
-
