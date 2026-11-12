@@ -1,0 +1,22 @@
+{
+  "name": "pumpkin-seed",
+  "private": true,
+  "version": "1.0.0",
+  "description": "PumpkinSeed: a shared festival UI and browser data layer with two local demo apps.",
+  "scripts": {
+    "dev:map": "pnpm --filter trick-or-treat-map dev",
+    "dev:story": "pnpm --filter ghost-story-relay dev",
+    "build": "pnpm -r build",
+    "build:map": "pnpm --filter trick-or-treat-map build",
+    "build:story": "pnpm --filter ghost-story-relay build",
+    "demo": "node scripts/dev.cjs",
+    "check": "node scripts/check.cjs",
+    "test": "node --test scripts/core.test.cjs",
+    "test:modal": "node scripts/modal-focus.test.cjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "pnpm@10.32.1"
+}
+
