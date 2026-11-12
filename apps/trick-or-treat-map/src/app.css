@@ -1,4 +1,4 @@
-/* Trick-or-Treat Map layout �� sibling styling defined by the seed's base.css */
+/* Trick-or-Treat Map layout — sibling styling defined by the seed's base.css */
 
 .tot-layout {
   display: grid;
@@ -203,7 +203,7 @@
 }
 .tot-stars button.on { filter: none; transform: scale(1.1); }
 
-/* Mobile: natural flow �� toolbar and chips take their own space, map is a fixed pane */
+/* Mobile: natural flow — toolbar and chips take their own space, map is a fixed pane */
 @media (max-width: 900px) {
   .tot-layout {
     grid-template-columns: 1fr;
@@ -219,4 +219,3 @@
 
 /* Disable the entire form while its captured draft is being saved. */
 .tot-form-fields { border: 0; padding: 0; margin: 0; min-width: 0; }
-
