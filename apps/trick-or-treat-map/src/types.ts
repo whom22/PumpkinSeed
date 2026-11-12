@@ -18,19 +18,19 @@ export interface CandyStop extends Row {
 }
 
 export const CANDY_TYPES = [
-  { key: 'chocolate', emoji: '??' },
-  { key: 'gummy', emoji: '??' },
-  { key: 'chips', emoji: '??' },
-  { key: 'drinks', emoji: '??' },
-  { key: 'fullsize', emoji: '??' },
-  { key: 'allergy', emoji: '??' },
+  { key: 'chocolate', emoji: '🍫' },
+  { key: 'gummy', emoji: '🐻' },
+  { key: 'chips', emoji: '🥔' },
+  { key: 'drinks', emoji: '🧃' },
+  { key: 'fullsize', emoji: '👑' },
+  { key: 'allergy', emoji: '🌾' },
 ] as const;
 
 export function candyEmoji(key: string): string {
-  return CANDY_TYPES.find((c) => c.key === key)?.emoji ?? '??';
+  return CANDY_TYPES.find((c) => c.key === key)?.emoji ?? '🍬';
 }
 
-/** Parse "18:00-21:00" �� [start, end] minutes, or null. */
+/** Parse "18:00-21:00" → [start, end] minutes, or null. */
 export function parseHours(hours: string): [number, number] | null {
   const m = /^(\d{1,2}):(\d{2})\s*-\s*(\d{1,2}):(\d{2})$/.exec(hours.trim());
   if (!m) return null;
@@ -55,4 +55,3 @@ export function distanceMeters(a: { lat: number; lng: number }, b: { lat: number
   const h = Math.sin(dLat / 2) ** 2 + Math.cos(la1) * Math.cos(la2) * Math.sin(dLng / 2) ** 2;
   return 2 * R * Math.asin(Math.sqrt(h));
 }
-
