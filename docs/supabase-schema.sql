@@ -31,7 +31,7 @@ create table if not exists story_lines (
 
 create index if not exists story_lines_room_idx on story_lines (room_id, created_at);
 
--- Open policies (anon writes) �� accepted trade-off documented in .kiro/steering/tech.md
+-- Open policies (anon writes) — accepted trade-off documented in .kiro/steering/tech.md
 alter table candy_stops enable row level security;
 alter table story_lines enable row level security;
 
@@ -44,4 +44,3 @@ create policy "story_lines open" on story_lines
 -- Realtime
 alter publication supabase_realtime add table candy_stops;
 alter publication supabase_realtime add table story_lines;
-
