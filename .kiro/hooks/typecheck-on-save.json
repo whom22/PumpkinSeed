@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "typecheck-on-save",
+      "trigger": "PostFileSave",
+      "matcher": "\\.(ts|tsx)$",
+      "action": {
+        "type": "command",
+        "command": "npx tsc --noEmit -p $(git rev-parse --show-toplevel 2>/dev/null || echo .)/apps/trick-or-treat-map/tsconfig.json"
+      },
+      "timeout": 45,
+      "enabled": true
+    }
+  ]
+}
+
