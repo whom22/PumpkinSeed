@@ -10,7 +10,7 @@ export interface StoryLine extends Row {
 }
 
 export const MAX_LINE_LENGTH = 140;
-export const OPENING_AUTHOR = '??? The House';
+export const OPENING_AUTHOR = '🕯️ The House';
 
 export function makeRoomCode(): string {
   const alphabet = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789';
@@ -29,4 +29,3 @@ export function randomGhostName(): string {
   const n = nouns[Math.floor(Math.random() * nouns.length)];
   return `${a} ${n}`;
 }
-
