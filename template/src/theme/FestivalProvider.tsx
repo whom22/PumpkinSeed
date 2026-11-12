@@ -20,7 +20,7 @@ export interface FestivalProviderProps {
 }
 
 /**
- * FestivalProvider �� injects the active skin's CSS variables and exposes
+ * FestivalProvider — injects the active skin's CSS variables and exposes
  * the skin switcher. Every PumpkinSeed app wraps its root with this,
  * which is why two different apps still feel like siblings.
  */
@@ -50,4 +50,3 @@ export function useFestival(): FestivalContextValue {
   if (!ctx) throw new Error('useFestival must be used inside <FestivalProvider>');
   return ctx;
 }
-
