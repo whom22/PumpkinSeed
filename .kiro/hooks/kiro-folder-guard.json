@@ -1,0 +1,16 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "kiro-folder-guard",
+      "trigger": "PostFileSave",
+      "matcher": "\\.gitignore$",
+      "action": {
+        "type": "agent",
+        "prompt": "Kiroween rules: the /.kiro directory (specs, hooks, steering) must never be gitignored or the submission is disqualified. Inspect the just-saved .gitignore. If it contains a pattern that would exclude .kiro or any of its children (e.g. a bare `.kiro` entry or an over-broad wildcard), flag it loudly to the user and propose a corrected .gitignore that keeps /.kiro tracked while preserving the user's intent for other paths."
+      },
+      "enabled": true
+    }
+  ]
+}
+
