@@ -7,7 +7,15 @@ PumpkinSeed is a React + TypeScript workspace with a reusable core and two apps:
 - **Trick-or-Treat Map:** add a fictional candy stop, choose a point on a map, filter markers, and add a thanks vote.
 - **Ghost Story Relay:** start a local room, append short story lines, vote, and preview the assembled story.
 
-Both apps import themes, UI components, language support and browser storage from `@pumpkin-seed/core`. The app-specific code is separate. This is a local demonstration, not a production community service.
+Both apps import themes, UI components, language support and browser storage from `@pumpkin-seed/core`. The app-specific code is separate. These demos use browser-local data, not a shared community backend.
+
+## Try the public demos
+
+- [PumpkinSeed landing page](https://whom22.github.io/PumpkinSeed/)
+- [Trick-or-Treat Map](https://whom22.github.io/PumpkinSeed/map/)
+- [Ghost Story Relay](https://whom22.github.io/PumpkinSeed/story/)
+
+GitHub Pages serves both apps. Data remains in your browser profile; story updates sync between tabs of that profile, not across devices. Use fictional demo data.
 
 ## Run the local demo
 
@@ -61,7 +69,7 @@ Its camelCase/snake_case field mapping matches the sample SQL and is unit-tested
 
 The repository contains three original application/template specification sets and a new modal-focus requirements record, steering files and hook definitions under `.kiro/`. Their presence does not prove actual Kiro sessions, executed hooks, or a spec-before-code workflow. Those claims remain unverified.
 
-The source repository is public at https://github.com/whom22/PumpkinSeed; no hosted deployment, public video or final submission is established by this local checkout. Competition eligibility and current rules need separate verification.
+The source repository is public at https://github.com/whom22/PumpkinSeed, and both browser-local demos are hosted on GitHub Pages at the links above. A public video and final competition submission are separate release steps. Competition eligibility and current rules need separate verification.
 
 ## License
 
