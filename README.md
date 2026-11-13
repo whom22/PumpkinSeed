@@ -49,7 +49,7 @@ This runs all three TypeScript checks, the core regression suite and both produc
 
 `scripts/browser-smoke.cjs` tests the built apps in a fresh headless Chromium context. It needs an existing Playwright installation and browser. It uses localhost ports 5173 and 5174, never your normal browser profile, and blocks external requests by default. Set `PLAYWRIGHT_MODULE` to an installed Playwright module path and optionally `CHROMIUM_EXECUTABLE` to the installed browser executable. Test outputs and screenshots go to ignored `.qa/`.
 
-See [the verification report](docs/verification-report.md) for tested and untested behavior, and [the demo runbook](docs/demo-runbook.md) for a three-minute rehearsal.
+See [the demo runbook](docs/demo-runbook.md) for recorded verification coverage and a three-minute rehearsal.
 
 ## Experimental hosted adapter
 
@@ -61,7 +61,7 @@ Its camelCase/snake_case field mapping matches the sample SQL and is unit-tested
 
 The repository contains three original application/template specification sets and a new modal-focus requirements record, steering files and hook definitions under `.kiro/`. Their presence does not prove actual Kiro sessions, executed hooks, or a spec-before-code workflow. Those claims remain unverified.
 
-Use [the factual submission draft](docs/submission-draft.md), not the archived promotional drafts, as the starting point. The source repository is public at https://github.com/whom22/PumpkinSeed; no hosted deployment, public video or final submission is established by this local checkout. Competition eligibility and current rules need separate verification.
+The source repository is public at https://github.com/whom22/PumpkinSeed; no hosted deployment, public video or final submission is established by this local checkout. Competition eligibility and current rules need separate verification.
 
 ## License
 
