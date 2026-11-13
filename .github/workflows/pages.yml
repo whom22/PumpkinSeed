@@ -1,0 +1,64 @@
+name: Build and deploy PumpkinSeed Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pumpkinseed-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install pnpm
+        run: npm install --global pnpm@10.32.1
+      - name: Install locked dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Typecheck, core tests, and both production builds
+        run: pnpm check
+      - name: Assemble public apps
+        run: |
+          mkdir -p _site/map _site/story
+          cp -a apps/trick-or-treat-map/dist/. _site/map/
+          cp -a apps/ghost-story-relay/dist/. _site/story/
+          touch _site/.nojekyll
+          cat > _site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+          <title>PumpkinSeed</title>
+          <style>body{margin:0;background:#0d0817;color:#fff4df;font:18px/1.6 system-ui;min-height:100vh;display:grid;place-items:center}main{max-width:680px;padding:40px}h1{font-size:3rem;margin:0;color:#ff9b49}a{color:#ffbc78}nav{display:grid;gap:16px;margin:32px 0}nav a{padding:20px;border:1px solid #694231;border-radius:16px;text-decoration:none;background:#201428}p{color:#d6c7de}</style>
+          <main><p>ONE SHARED FOUNDATION. TWO HALLOWEEN EXPERIENCES.</p><h1>PumpkinSeed</h1><p>Explore a candy map and create a spooky story, powered by the same festival UI and browser data layer.</p><nav><a href="./map/">Open Trick-or-Treat Map &rarr;</a><a href="./story/">Open Ghost Story Relay &rarr;</a></nav><p>Demo data stays in your browser. Story updates sync between tabs in the same browser profile.</p><a href="https://github.com/whom22/PumpkinSeed">Source code and project documentation</a></main></html>
+          HTML
+          test -f _site/map/index.html
+          test -f _site/story/index.html
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/configure-pages@v5
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
