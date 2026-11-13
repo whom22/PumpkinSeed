@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: 'Trick-or-Treat Map',
         short_name: 'TOT Map',
-        description: 'Community candy map for Halloween night — find houses, plan routes, dodge allergens.',
+        description: 'A local Halloween candy map — add fictional stops, filter markers, and share thanks.',
         theme_color: '#0d0817',
         background_color: '#0d0817',
         display: 'standalone',
