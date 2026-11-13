@@ -12,7 +12,7 @@ export default defineConfig({
       manifest: {
         name: 'Ghost Story Relay',
         short_name: 'Story Relay',
-        description: 'Write scary stories together, one sentence at a time, in realtime.',
+        description: 'Create scary stories together, one sentence at a time.',
         theme_color: '#0d0817',
         background_color: '#0d0817',
         display: 'standalone',
